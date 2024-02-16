@@ -1,0 +1,14 @@
+version: '3'
+services:
+  dev_container:
+    build:
+      context: ../../
+      dockerfile: source/docker/Dockerfile
+    volumes:
+      - ../../:/workspaces:cached
+    command: sleep infinity
+  testrepo:
+    build:
+      context: ../../
+      dockerfile: source/docker/Dockerfile
+    command: python -u ./source/python/main.py
