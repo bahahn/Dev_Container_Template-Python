@@ -12,3 +12,4 @@ services:
       context: ../../
       dockerfile: source/docker/Dockerfile
     command: python -u ./source/python/main.py
+    # command: sleep infinity

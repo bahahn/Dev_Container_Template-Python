@@ -6,7 +6,21 @@
 	"service": "dev_container",
 	"runServices": ["dev_container"],
 	"workspaceFolder": "/workspaces",
-	"shutdownAction": "stopCompose"
+	"shutdownAction": "stopCompose",
+
+	// VS Code Extensions Install
+	"customizations": {
+		"vscode": {
+		  "extensions": [
+		  "ms-python.python",
+		  "ms-python.isort",
+		  "ms-python.flake8",
+		  "ms-toolsai.jupyter",
+		  "donjayamanne.python-environment-manager",
+		  "christian-kohler.path-intellisense"
+		  ]
+		}
+	  }
 
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	//"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye"

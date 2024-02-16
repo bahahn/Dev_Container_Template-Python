@@ -8,6 +8,8 @@ numpy = "*"
 pandas = "*"
 matplotlib = "*"
 tqdm = "*"
+plotly = "*"
+graypy = "*"
 
 [dev-packages]
 
