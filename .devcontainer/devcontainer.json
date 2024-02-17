@@ -1,11 +1,11 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python 3",
-	"dockerComposeFile": "../source/docker/docker-compose.yml",
+	"name": "DevContainer",
+	"dockerComposeFile": "../source/docker/docker-compose.yml", // Use docker compose
 	"service": "dev_container",
-	"runServices": ["dev_container"],
-	"workspaceFolder": "/workspaces",
+	"runServices": ["dev_container"], // Only run dev container, all others have to be started or added here
+	"workspaceFolder": "/workspaces", // Use mounted workspace directory as path while opening container
 	"shutdownAction": "stopCompose",
 
 	// VS Code Extensions Install
@@ -17,7 +17,10 @@
 		  "ms-python.flake8",
 		  "ms-toolsai.jupyter",
 		  "donjayamanne.python-environment-manager",
-		  "christian-kohler.path-intellisense"
+		  "christian-kohler.path-intellisense",
+		  "mechatroner.rainbow-csv",
+		  "gruntfuggly.todo-tree",
+		  "redhat.vscode-yaml"
 		  ]
 		}
 	  }

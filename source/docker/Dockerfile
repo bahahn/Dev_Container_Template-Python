@@ -1,16 +1,20 @@
 FROM python:3.9 
 
-# RUN pip install --no-cache-dir --upgrade pip && \
-#     pip install --no-cache-dir numpy pandas matplotlib tqdm
-
 ENV PIPENV_VENV_IN_PROJECT=1
 
-# Install & use pipenv
+# Copy Pipfile
 COPY Pipfile ./
+
+# Install pipenv
 RUN pip install pipenv
+
+# Create Pipfile.lock out of Pipfile
 RUN pipenv lock
+
+# Install pipenv in system environment
 RUN pipenv sync --system
 
+# Copy all files to /app directory
 WORKDIR /app
 COPY . .
 

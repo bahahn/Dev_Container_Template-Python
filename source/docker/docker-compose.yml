@@ -2,14 +2,13 @@ version: '3'
 services:
   dev_container:
     build:
-      context: ../../
+      context: ../../ # Context should be root of repository
       dockerfile: source/docker/Dockerfile
     volumes:
-      - ../../:/workspaces:cached
+      - ../../:/workspaces:cached # Mount workspace directory to container
     command: sleep infinity
   testrepo:
     build:
-      context: ../../
+      context: ../../ # Context should be root of repository
       dockerfile: source/docker/Dockerfile
-    command: python -u ./source/python/main.py
-    # command: sleep infinity
+    command: python -u ./source/python/main.py  # -u so print will be in log of container
