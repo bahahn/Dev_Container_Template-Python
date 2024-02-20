@@ -10,6 +10,7 @@ matplotlib = "*"
 tqdm = "*"
 plotly = "*"
 graypy = "*"
+ipykernel = "*"
 
 [dev-packages]
 
