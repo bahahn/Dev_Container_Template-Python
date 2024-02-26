@@ -20,7 +20,8 @@
 		  "christian-kohler.path-intellisense",
 		  "mechatroner.rainbow-csv",
 		  "gruntfuggly.todo-tree",
-		  "redhat.vscode-yaml"
+		  "redhat.vscode-yaml",
+		  "ms-azuretools.vscode-docker"
 		  ]
 		}
 	  },

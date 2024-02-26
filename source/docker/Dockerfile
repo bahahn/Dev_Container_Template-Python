@@ -1,8 +1,11 @@
 FROM python:3.9-slim
 
 # gcc because of ipykernel on arm (won't work with --no-install-recommends)
-# RUN apt-get update && apt-get install -y --no-install-recommends gcc && apt-get clean && rm -rf /var/lib/apt/lists/*
-RUN apt-get update && apt-get install -y gcc && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y gcc \
+    && apt-get install -y --no-install-recommends iputils-ping \
+    && apt-get install -y --no-install-recommends net-tools \
+    && apt-get install -y --no-install-recommends htop \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV PIPENV_VENV_IN_PROJECT=1
 
