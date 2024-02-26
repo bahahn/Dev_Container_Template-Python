@@ -1,4 +1,7 @@
-FROM python:3.9 
+FROM python:3.9-slim
+
+# gcc because of ipykernel on arm...
+RUN apt-get update && apt-get install -y gcc && apt-get clean
 
 ENV PIPENV_VENV_IN_PROJECT=1
 
@@ -6,10 +9,10 @@ ENV PIPENV_VENV_IN_PROJECT=1
 COPY Pipfile ./
 
 # Install pipenv
-RUN pip install pipenv
+RUN pip install --no-cache-dir pipenv
 
 # Create Pipfile.lock out of Pipfile
-RUN pipenv lock
+RUN pipenv lock && pipenv --clear && pipenv --rm
 
 # Install pipenv in system environment
 RUN pipenv sync --system

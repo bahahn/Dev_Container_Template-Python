@@ -1,6 +1,7 @@
 version: '3'
 services:
   dev_container:
+    # platform: linux/amd64
     build:
       context: ../../ # Context should be root of repository
       dockerfile: source/docker/Dockerfile
@@ -8,6 +9,7 @@ services:
       - ../../:/workspaces:cached # Mount workspace directory to container
     command: sleep infinity
   testrepo:
+    # platform: linux/amd64
     build:
       context: ../../ # Context should be root of repository
       dockerfile: source/docker/Dockerfile

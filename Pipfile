@@ -10,9 +10,12 @@ matplotlib = "*"
 tqdm = "*"
 plotly = "*"
 graypy = "*"
-ipykernel = "*"
 
 [dev-packages]
+ipykernel = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
 
 [requires]
 python_version = "3.9"
