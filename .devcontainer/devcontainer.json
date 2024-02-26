@@ -15,6 +15,7 @@
 		  "ms-python.python",
 		  "ms-python.isort",
 		  "ms-python.flake8",
+		  "ms-python.black-formatter",
 		  "ms-toolsai.jupyter",
 		  "donjayamanne.python-environment-manager",
 		  "christian-kohler.path-intellisense",
