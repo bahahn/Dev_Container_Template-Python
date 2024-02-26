@@ -1,7 +1,8 @@
 FROM python:3.9-slim
 
-# gcc because of ipykernel on arm...
-RUN apt-get update && apt-get install -y gcc && apt-get clean
+# gcc because of ipykernel on arm (won't work with --no-install-recommends)
+# RUN apt-get update && apt-get install -y --no-install-recommends gcc && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y gcc && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV PIPENV_VENV_IN_PROJECT=1
 
@@ -19,6 +20,6 @@ RUN pipenv sync --system
 
 # Copy all files to /app directory
 WORKDIR /app
-COPY . .
+COPY source/ source/
 
 CMD ["python", "./source/python/main.py"]
